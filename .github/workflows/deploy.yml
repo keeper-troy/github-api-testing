@@ -5,6 +5,7 @@ on: workflow_dispatch
 jobs:
   build:
     name: Building
+    runs-on: ubuntu-latest
     steps:
       - name: Building
         shell: bash
@@ -13,6 +14,7 @@ jobs:
 
   confirm-deploy:
     name: Confirm deploy
+    runs-on: ubuntu-latest
     needs: build
     steps:
       - name: Confirmed Deployment
@@ -21,6 +23,7 @@ jobs:
 
   deploy:
     name: Deploy
+    runs-on: ubuntu-latest
     needs: confirm-deploy
     steps:
       - name: Deploy
