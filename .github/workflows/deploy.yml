@@ -1,0 +1,28 @@
+name: Deploy
+env:
+  TEST_VAR: true
+jobs:
+  build:
+    name: Building
+    steps:
+      - name: Building
+        shell: bash
+        run: |
+          echo "Built"
+
+  confirm-deploy:
+    name: Confirm deploy
+    needs: build
+    steps:
+      - name: Confirmed Deployment
+        run: |
+          echo "Confirmed"
+
+  deploy:
+    name: Deploy
+    needs: confirm-deploy
+    steps:
+      - name: Deploy
+        shell: bash
+        run: |
+          echo "Deployed"
