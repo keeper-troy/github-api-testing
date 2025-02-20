@@ -15,6 +15,7 @@ jobs:
       - name: Building
         shell: bash
         run: |
+          echo $WORDPRESS_ARCHIVE
           echo "Built"
 
   confirm-deploy:
