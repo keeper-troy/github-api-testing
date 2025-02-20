@@ -1,7 +1,12 @@
 name: Deploy
 env:
   TEST_VAR: true
-on: workflow_dispatch
+on:
+  workflow_dispatch:
+    inputs:
+      wordpress_archive:
+        description: 'wordpress static site archive'
+        required: true
 jobs:
   build:
     name: Building
