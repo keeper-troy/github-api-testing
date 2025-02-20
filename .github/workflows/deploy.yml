@@ -11,6 +11,8 @@ jobs:
   build:
     name: Building
     runs-on: ubuntu-latest
+    env:
+      WORDPRESS_ARCHIVE: ${{ github.event.inputs.wordpress_archive }}
     steps:
       - name: Building
         shell: bash
